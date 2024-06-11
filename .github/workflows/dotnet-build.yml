@@ -19,7 +19,7 @@ jobs:
 
     - name: executar script personalizado
       run: |
-        printf `"Hello world!"'
+        printf '"Hello world!\n"'
 
     - name: instalar dependências 
       run: dotnet restore
