@@ -1,0 +1,44 @@
+name: dotnet build
+
+on:
+  push:
+  schedule:
+    - cron: '* */1 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: configuração ambiente .net core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.301
+
+    - name: executar script personalizado
+      run: |
+        printf '"Hello world!"\n'
+
+    - name: instalar dependências 
+      run: |
+        dotnet restore github4women/github4women.csproj
+
+    - name: compilação
+      run: |
+        dotnet build github4women/github4women.csproj
+
+    - name: teste
+      run: |
+        dotnet test github4women/github4women.csproj
+
+    - name: publicação
+      run: |
+        dotnet publish github4women/github4women.csproj
+
+    - name: documentação do workflow
+      uses: actions/upload-artifact@v3
+      with:
+        name: documento-workflow
+        path: documento-workflow.md
