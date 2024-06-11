@@ -23,20 +23,16 @@ jobs:
 
     - name: instalar dependências 
       run: |
-        cd ./github-actions-dotnet-webapp/github4women/github4women.csproj
-        dotnet restore
+        dotnet restore ./github-actions-dotnet-webapp/github4women/github4women.csproj
 
     - name: compilação
       run: |
-        cd ./github-actions-dotnet-webapp/github4women/github4women.csproj
-        dotnet build
+        dotnet build ./github-actions-dotnet-webapp/github4women/github4women.csproj
 
     - name: teste
       run: |
-        cd ./github-actions-dotnet-webapp/github4women/github4women.csproj
-        dotnet test
+        dotnet test ./github-actions-dotnet-webapp/github4women/github4women.csproj
 
     - name: publicação
       run: |
-        cd ./github-actions-dotnet-webapp/github4women/github4women.csproj
-        dotnet publish
+        dotnet publish ./github-actions-dotnet-webapp/github4women/github4women.csproj
