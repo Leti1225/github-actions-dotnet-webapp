@@ -22,21 +22,21 @@ jobs:
         printf '"Hello world!\n"'
 
     - name: instalar dependências 
-      working-directory: .\github-actions-dotnet-webapp\github4women\github4women.csproj
+      working-directory: .\github4women\github4women.csproj
       run: |
         dotnet restore 
 
     - name: compilação
-      working-directory: .\github-actions-dotnet-webapp\github4women\github4women.csproj
+      working-directory: .\github4women\github4women.csproj
       run: |
         dotnet build 
 
     - name: teste
-      working-directory: .\github-actions-dotnet-webapp\github4women\github4women.csproj
+      working-directory: .\github4women\github4women.csproj
       run: |
         dotnet test 
 
     - name: publicação
-      working-directory: .\github-actions-dotnet-webapp\github4women\github4women.csproj
+      working-directory: .\github4women\github4women.csproj
       run: |
         dotnet publish 
