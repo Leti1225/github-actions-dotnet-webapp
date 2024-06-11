@@ -22,13 +22,21 @@ jobs:
         printf '"Hello world!\n"'
 
     - name: instalar dependências 
-      run: dotnet restore
+      run: |
+        cd C:\Users\Letic\OneDrive\Documentos\github-actions-dotnet-webapp\github4women\github4women.csproj
+        dotnet restore
 
     - name: compilação
-      run: dotnet build
+      run: |
+        cd C:\Users\Letic\OneDrive\Documentos\github-actions-dotnet-webapp\github4women\github4women.csproj
+        dotnet build
 
     - name: teste
-      run: dotnet test
+      run: |
+        cd C:\Users\Letic\OneDrive\Documentos\github-actions-dotnet-webapp\github4women\github4women.csproj
+        dotnet test
 
     - name: publicação
-      run: dotnet publish
+      run: |
+        cd C:\Users\Letic\OneDrive\Documentos\github-actions-dotnet-webapp\github4women\github4women.csproj
+        dotnet publish
